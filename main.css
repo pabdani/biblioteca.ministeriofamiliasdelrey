@@ -2,6 +2,14 @@ body {
 font-family: 'Lato', sans-serif;
 }
 
+.dl_link:visited {
+color: #2ac7ff;
+}
+
+.dl_link:link {
+color: #2ac7ff;
+}
+
 .category {
 font-family: 'Fira Sans', sans-serif;
 }
