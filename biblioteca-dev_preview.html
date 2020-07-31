@@ -94,6 +94,7 @@
        if (Notification.permission === "granted") {
        // Si esta correcto lanzamos la notificación
        var notification = new Notification("Se han activado las notificaciones");
+       document.cookie = "alertLaunched=yes";
       }
 
       // Si no, tendremos que pedir permiso al usuario
@@ -102,6 +103,7 @@
        // Si el usuario acepta, lanzamos la notificación
        if (permission === "granted") {
       var notification = new Notification("Se han activado las notificaciones");
+      document.cookie = "alertLaunched=yes";
       }
     });
       }
