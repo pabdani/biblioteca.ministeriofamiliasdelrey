@@ -81,14 +81,14 @@
      </div>
 
      <script>
+      Notification.requestPermission();
+
       document.cookie = "alertLaunched?=no"
       
       var alertlaunched_cookie = getCookie("alertLaunched?");
       
       if (alertlaunched_cookie === "no") {
         var notification = null;
-        
-        Notification.requestPermission();
 
         if (!('Notification' in window)) {
           // el navegador no soporta la API de notificaciones
@@ -96,7 +96,7 @@
           return;
         } else if (Notification.permission === "granted") {
           // Se puede emplear las notificaciones
-          notification = new Notification( "Nuevo libro: test");
+          notification = new Notification("Nuevo libro: test");
           document.cookie = "alertLaunched?=yes";
         }
       }
