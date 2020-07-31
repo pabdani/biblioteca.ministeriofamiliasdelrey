@@ -8,7 +8,7 @@ function notifyMe() {
   // Comprobamos si ya nos habían dado permiso
   else if (Notification.permission === "granted") {
     // Si esta correcto lanzamos la notificación
-    var notification = new Notification("Holiwis :D");
+    var notification = new Notification("Se han activado las notificaciones");
   }
 
   // Si no, tendremos que pedir permiso al usuario
@@ -16,13 +16,10 @@ function notifyMe() {
     Notification.requestPermission(function (permission) {
       // Si el usuario acepta, lanzamos la notificación
       if (permission === "granted") {
-        var notification = new Notification("Gracias majo!");
+        var notification = new Notification("Se han activado las notificaciones");
       }
     });
   }
-
-  // Finalmente, si el usuario te ha denegado el permiso y 
-  // quieres ser respetuoso no hay necesidad molestar más.
 }
 </script>
 
