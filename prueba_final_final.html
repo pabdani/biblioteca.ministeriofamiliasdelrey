@@ -5,21 +5,14 @@ function notificacionBasica() {
         // el navegador no soporta la API de notificaciones
         alert('Su navegador no soporta la API de Notificaciones :(');
         return;
-    } else if (Notification.permission === "granted") {
-        // Se puede emplear las notificaciones
+    }
 
-        notification = new Notification( "Hola Mundo");
-
-    } else if (Notification.permission !== 'denied') {
-        // se pregunta al usuario para emplear las notificaciones
-        Notification.requestPermission(function(permission) {
+    Notification.requestPermission(function(permission) {
             if (permission === "granted") {
                 var notification = new Notification("AAAAA");
             }
-        });
+    });
     }
-
-}
 </script>
 
 <button onclick="notificacionBasica()">¡Lanzar notificación básica!</button>
