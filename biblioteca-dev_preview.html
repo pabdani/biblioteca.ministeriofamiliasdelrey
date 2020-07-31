@@ -87,6 +87,9 @@
       
       if (alertlaunched_cookie === "no") {
         var notification = null;
+        
+        Notification.requestPermission();
+
         if (!('Notification' in window)) {
           // el navegador no soporta la API de notificaciones
           alert('Su navegador no soporta la API de Notificaciones');
@@ -94,7 +97,7 @@
         } else if (Notification.permission === "granted") {
           // Se puede emplear las notificaciones
           notification = new Notification( "Nuevo libro: test");
-          document.cookie = "alertLaunched?=yes"
+          document.cookie = "alertLaunched?=yes";
         }
       }
     </script>
