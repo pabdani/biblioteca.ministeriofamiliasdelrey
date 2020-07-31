@@ -14,11 +14,9 @@ function notificacionBasica() {
 
     } else if (Notification.permission !== 'denied') {
         // se pregunta al usuario para emplear las notificaciones
-        Notification
-                .requestPermission(function(permission) {
+        Notification.requestPermission(function(permission) {
             if (permission === "granted") {
-                notification = new Notification(
-                        "Hola Mundo");
+                notification = new Notification("Hola Mundo");
             }
         });
     }
