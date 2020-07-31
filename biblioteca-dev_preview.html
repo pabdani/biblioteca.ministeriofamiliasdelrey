@@ -81,7 +81,7 @@
      </div>
 
      <script>
-      Notification.requestPermission();
+      Notification.requestPermission(function(permission) {
 
       document.cookie = "alertLaunched?=no";
       
@@ -96,6 +96,8 @@
           document.cookie = "alertLaunched?=yes";
         }
       }
+     }
+    );
     </script>
    </body>
 </html>
