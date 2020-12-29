@@ -111,22 +111,38 @@
 <html>
   <head>
     <title>Biblioteca Virtual MFR</title>
+    <script src="https://files.pynews.ml/scripts/jquery.min.js"></script>
     <style>
       #main {
         background:url(https://webhosted.pabdani.ml/cargando.gif) center center no-repeat;
       }
+      
+      #loadingMessage {
+       width: 100%;
+       height: 100%;
+       z-index: 1000;
+       background: #ccc;
+       top: 0px;
+       left: 0px;
+       position: absolute;
+       font-size: 30px;
+    }
     </style>
   </head>
   <body>
+    <script>
+    $('#foo').ready(function () {
+       setTimeout(function(){
+            $('#loadingMessage').css('display', 'none');
+       },5000); 
+    });
+    $('#foo').load(function () {
+       setTimeout(function(){
+           $('#loadingMessage').css('display', 'none');
+       },5000); 
+    });
+    </script>
     <div id="main"><iframe src="https://webhosted.pabdani.ml/mfr-biblioteca/home.php" frameborder="0" width="100%" height="100%"></iframe></div>
+    <div id="loadingMessage"><img src="https://webhosted.pabdani.ml/cargando.gif"></div
   </body>
 </html>
-<script>
-$('iframe').load(function(){
-         $(".loading").remove();
-       alert("iframe is done loading")
-}).show();
-</script>
-
-<iframe src="http://www.google.com" style="display:none;" width="600" height="300"/>
-<div class="loading" style="width:600px;height:300px;">iframe loading</div>
